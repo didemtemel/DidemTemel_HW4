@@ -1,19 +1,33 @@
-﻿@model CetBookStore.ViewModel.SearchViewModel
+﻿
+@model CetBookStore.ViewModel.SearchViewModel
 
 <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-
-
     <div class="header_search">
         <div class="header_search_content">
             <div class="header_search_form_container">
                 <form asp-controller="Home" asp-action="Search" class="header_search_form clearfix">
 
-                  <input type="search" placeholder="Ara" required="required" class="header_search_input" asp-for="SearchText">
-                  <button class="header_search_button trans_300" type="submit" value="Submit"><img alt="" src="images/search.png"></button>
+
+
+                    <input type="search" placeholder="Ara" required="required" class="header_search_input" asp-for="SearchText">
+                    
+                    
+                    
+                    <div class="custom_dropdown">
+                        <div class="custom_dropdown_list">
+                            <span class="custom_dropdown_placeholder clc">Tüm Kategoriler</span>
+                            <i class="fas fa-chevron-down"></i>
+                            <ul class="custom_list clc active">
+                                <li><a asp-for="CategoryId" class="form-control" asp-controller="Categories" asp-items="ViewBag.CategoryId"></a></li>
+                            </ul>
+                        </div>
+                    </div>
 
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
 
