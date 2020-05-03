@@ -7,21 +7,21 @@
             <div class="header_search_form_container">
                 <form asp-controller="Home" asp-action="Search" class="header_search_form clearfix">
 
-
-
                     <input type="search" placeholder="Ara" required="required" class="header_search_input" asp-for="SearchText">
-                    
-                    
                     
                     <div class="custom_dropdown">
                         <div class="custom_dropdown_list">
                             <span class="custom_dropdown_placeholder clc">Tüm Kategoriler</span>
                             <i class="fas fa-chevron-down"></i>
                             <ul class="custom_list clc active">
-                                <li><a asp-for="CategoryId" class="form-control" asp-controller="Categories" asp-items="ViewBag.CategoryId"></a></li>
+
+                                <li><a class="clc" href="#">Sced</a></li>
+                                <li><a class="clc" href="#">Cet</a></li>
+
                             </ul>
                         </div>
                     </div>
+
 
                 </form>
             </div>
