@@ -6,28 +6,33 @@
         <div class="header_search_content">
             <div class="header_search_form_container">
                 <form asp-controller="Home" asp-action="Search" class="header_search_form clearfix">
-
                     <input type="search" placeholder="Ara" required="required" class="header_search_input" asp-for="SearchText">
-                    
                     <div class="custom_dropdown">
                         <div class="custom_dropdown_list">
-                            <span class="custom_dropdown_placeholder clc">Tüm Kategoriler</span>
+                            <span class="custom_dropdown_placeholder clc">Tum Kategoriler</span>
                             <i class="fas fa-chevron-down"></i>
-                            <ul class="custom_list clc active">
-
-                                <li><a class="clc" href="#">Sced</a></li>
-                                <li><a class="clc" href="#">Cet</a></li>
+                            <ul class="custom_list clc">
+                                <li><a class="clc" onclick="SetCategoryId('')">Tüm Kategoriler</a></li>
+                                <li><a class="clc" onclick="SetCategoryId('1')">SCED</a></li>
+                                <li><a class="clc" onclick="SetCategoryId('2')">CET</a></li>
+                                <li><a class="clc" onclick="SetCategoryId('3')">FLED</a></li>
 
                             </ul>
                         </div>
                     </div>
-
+                    <input type="hidden" asp-for="CategoryId"/>
+                    <button class="header_search_button trans_300" type="submit" value="Submit"><img alt="" src="~/images/search.png"></button>
 
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function SetCategoryId(id) {
+        document.getElementById("CategoryId").value = id;
+    }
+</script>
 
 
 
